@@ -8,11 +8,12 @@ const gameSchema = new Schema(
   thumbnailUrl: {type: String, default:"poner imagen aqui"},
   description: { type: String },
   creator: { type: Schema.Types.ObjectId, ref: 'User' },
-  reviews: [{type: Schema.Types.ObjectId, ref: 'Review', default: []}]   
+  reviews: [{type: Schema.Types.ObjectId, ref: 'Review', default: []}],
+  genre: String
   }
 );
 
-const User = model("Game", gameSchema);
+const Game = model("Game", gameSchema);
 
 // Game model{name, genre, ???}
 

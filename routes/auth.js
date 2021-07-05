@@ -10,7 +10,7 @@ const saltRounds = 10;
 // Require the User model in order to interact with the database
 const User = require("../models/User.model");
 
-// Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
+// Require necessary (isLoggedOut and isLoggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
@@ -20,7 +20,7 @@ router.get("/signup", isLoggedOut, (req, res) => {//isLoggedOut,
 
 router.post("/signup", isLoggedOut, (req, res) => {//isLoggedOut,
   const { username, password, email, creator } = req.body;////////domingo 4/////////////////
-
+  console.log(req.body)
   if (!username) {
     return res
       .status(400)
@@ -86,13 +86,12 @@ router.post("/signup", isLoggedOut, (req, res) => {//isLoggedOut,
 });
 
 router.get("/login", isLoggedOut,  (req, res) => { //isLoggedOut,////////////////domingo
-  console.log("no renderizo bien!!")
   res.render("auth/login");
 });
 
 router.post("/login", isLoggedOut, (req, res, next) => { //isLoggedOut,//////////////////domingo
-  const { username, password, creator } = req.body;////////////sábado 3///////////////////////////////////////
-
+  const { username, password } = req.body;////////////sábado 3///////////////////////////////////////
+  console.log(req.body)
   if (!username) {
     return res
       .status(400)
@@ -116,11 +115,11 @@ router.post("/login", isLoggedOut, (req, res, next) => { //isLoggedOut,/////////
             .render("auth/login", { errorMessage: "Wrong credentials." });
         }
         req.session.user = user;
-        //if(creator===true){
-          return res.redirect("/private/index")//poner aqui index  de creador!!!!
-        //}else{
-          //return res.redirect("/private/user");//////////////////////////sábado 3//////////////////////////////////////////////////
-        //} 
+        if(user.creator==="No"){
+          return res.redirect("/private/user")//poner aqui index  de creador!!!!
+        }else{
+          return res.redirect("/private/creator");//////////////////////////sábado 3//////////////////////////////////////////////////
+        } 
         
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
         

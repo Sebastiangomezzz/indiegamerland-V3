@@ -1,4 +1,20 @@
+
 <nav>
     <a href="/auth/logout">Log out</a>
+    
 </nav>
 <h1>Welcome, Creator!!</h1>
+
+<div>
+    
+    {{#each gamesList}}
+        {{name}} <br>
+        {{thumbnailUrl}} <br>
+        {{creator}}<br>
+    {{/each}}
+    
+</div>
+<div>
+    <a href="/private/game/add">Add Game</a>
+</div>
+

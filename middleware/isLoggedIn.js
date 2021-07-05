@@ -6,3 +6,5 @@ module.exports = (req, res, next) => {
   req.user = req.session.user;
   next();
 };
+
+// req.session.user.creator==="Yes"/"No"

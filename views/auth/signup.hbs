@@ -1,0 +1,30 @@
+<div class="forms">
+   <form action="/auth/signup" method="POST">
+      <label> Username
+         <input type="text" name="username">
+      </label>
+
+      <label> Email
+         <input type="email" name="email">
+      </label>
+
+      <label> Password
+         <input type="password" name="password">
+      </label>
+
+      <label> Are you a Creator?
+         <select name="creator">
+            <option value ="Yes">Yes</option>
+            <option value ="No">No</option>
+         </select>
+      </label>
+      {{!-- <label>Creator
+         <input type="checkbox" name="creator">
+      </label> --}}
+
+      <button type="submit">Submit</button>
+   </form>
+</div>
+
+
+
