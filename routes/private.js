@@ -18,7 +18,7 @@ router.get('/user', isLoggedIn, (req, res) => {
 
 router.get("/creator", isLoggedIn, (req, res)=>{
 	Game.find()
-	//.populate("")
+	.populate("User")
 	.then(gamesList =>{
 		res.render('private/creator', {gamesList})
 	})
@@ -28,7 +28,7 @@ router.get("/creator", isLoggedIn, (req, res)=>{
 //////Add a new Game//////////////////// :D XDDD
 
 router.post("/game/add", isLoggedIn, (req, res)=>{
-	const creator = req.session.user._id
+	const creator = req.session.user._id  
 	const {name, url, thumbnailUrl, description, review, genre}= req.body	
 	Game.create({name, url, thumbnailUrl, description, creator, review, genre})	
 	.then(newGame=>{
@@ -39,10 +39,9 @@ router.post("/game/add", isLoggedIn, (req, res)=>{
 })
 
 router.get("/game/add", isLoggedIn, (req, res)=>{
-	const user = req.session.user
 	Game.find()
 	.then(gamesList=>{
-		console.log(user)
+		console.log(userName)
 		res.render("private/new-game", gamesList)
 	})
 	.catch(err=> console.log(err))
