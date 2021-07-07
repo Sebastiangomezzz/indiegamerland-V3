@@ -1,5 +1,4 @@
 <nav class="index-navbar">
-        <a href="">Continue without logging in</a><br>
         <a href="/auth/login">Log in</a><br>
         <a href="/auth/signup">Sign up</a>
 </nav>
@@ -8,6 +7,20 @@
     <h1>Welcome to INDIEGAMERLAND!!</h1>
     <h3>"Where the gamers and the game creators share their experiences"</h3>
 </div>
+
+<div>
+    
+    {{#each gamesList}}
+        {{name}} <br>
+        <img src="{{thumbnailUrl}}" alt="Game Image"></img> <br>
+        {{creator.username}}<br>
+        <a href="{{_id}}" class ="play-button" role="button">PLAY</a>
+        <hr>        
+    {{/each}}
+    
+</div>
+
+
 <div>
     {{!-- <iframe src="(aqui ira la url del juego con el id de al lado)" frameborder="0">Game One(aqui tiene que ir un id de un juego y su nombre)</iframe>
     <iframe src="(aqui ira la url del juego con el id de al lado)" frameborder="0">Game two(aqui tiene que ir un id de un juego y su nombre)</iframe> --}}

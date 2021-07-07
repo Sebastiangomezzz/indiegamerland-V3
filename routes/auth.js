@@ -14,6 +14,8 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+const fileUploader = require('../config/cloudinary.config.js');
+
 router.get("/signup", isLoggedOut, (req, res) => {//isLoggedOut,
   res.render("auth/signup");
 });
@@ -91,7 +93,6 @@ router.get("/login", isLoggedOut,  (req, res) => { //isLoggedOut,///////////////
 
 router.post("/login", isLoggedOut, (req, res, next) => { //isLoggedOut,//////////////////domingo
   const { username, password } = req.body;////////////sábado 3///////////////////////////////////////
-  console.log(req.body)
   if (!username) {
     return res
       .status(400)
@@ -133,6 +134,9 @@ router.post("/login", isLoggedOut, (req, res, next) => { //isLoggedOut,/////////
       // return res.status(500).render("login", { errorMessage: err.message });
     });
 });
+
+
+
 
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {

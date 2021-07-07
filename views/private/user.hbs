@@ -2,3 +2,16 @@
     <a href="/auth/logout">Log out</a>
 </nav>
 <h1>Welcome, User!!</h1>
+
+<div>
+    
+    {{#each gamesList}}
+        {{name}} <br>
+        <img src="{{thumbnailUrl}}" alt="Game Image"></img> <br>
+        {{creator.username}}<br>
+        <a href="{{_id}}" class ="play-button" role="button">PLAY</a>
+        <hr>        
+    {{/each}}
+    
+</div>
+

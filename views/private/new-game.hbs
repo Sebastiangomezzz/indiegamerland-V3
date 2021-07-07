@@ -2,7 +2,7 @@
 
 <div>
     
-    <form action="/private/game/add" method="post">
+    <form action="/private/game/add" method="post" enctype="multipart/form-data">
 
     <label> Game Name  
         <input type ="text" name= "name" required>
@@ -12,10 +12,10 @@
         <input type ="url" name= "url" required>
     </label><br>
 
-    <label> Game Image
-         <input type ="image " name="thumbnailUrl" src="/public/images/skatergirl.PNG" >
-       
-    </label>
+    <label> Game Image </label>
+         <input type ="file" name="thumbnailUrl">
+         <br>
+    
 
     <label> Description
         <textarea type ="text" name= "description" required maxlength="300">

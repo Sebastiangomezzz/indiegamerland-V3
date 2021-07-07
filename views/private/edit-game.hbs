@@ -1,0 +1,31 @@
+
+<h2>Edit Game</h2>
+
+<form action='/private/{{game._id}}/edit' method='POST' enctype="multipart/form-data">
+
+  <label>Game name:</label>
+  <input type="text" name="name" value="{{game.name}}" />
+  <br>
+
+  <label>Game Image</label>
+  <input type="file" name="thumbnailUrl" value="{{game.thumbnailUrl}}"/>
+  <br>
+  <label>Game Description</label>
+  <textarea type="text" name="description" value="{{game.description}}" /> 
+  </textarea>
+  <br>
+  <label for="genre-select">Select genre: 
+        <select name="genre" id="genre-select">
+            <option value="">--Please choose an option--</option>
+            <option value="Arcade">Arcade</option>
+            <option value="RPG">RPG</option>
+            <option value="Platform">Platform</option>
+            <option value="Strategy">Strategy</option>
+            <option value="Other">Other</option>
+        </select>
+    </label><br>
+
+
+  <button type="submit">Update Game</button>
+</form>
+

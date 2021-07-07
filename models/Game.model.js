@@ -5,9 +5,9 @@ const gameSchema = new Schema(
   {
   name: {type: String, unique: true},
   url: {type: String, required: true},
-  thumbnailUrl: {type: String, default:"poner imagen aqui"},
+  thumbnailUrl: String,
   description: { type: String },
-  creator: { type: Schema.Types.ObjectId, ref: 'User' },
+  creator: { type: Schema.Types.ObjectId, ref: 'User' },//esto se "autosustituye" por el id del user.model 
   reviews: [{type: Schema.Types.ObjectId, ref: 'Review', default: []}],
   genre: String
   }

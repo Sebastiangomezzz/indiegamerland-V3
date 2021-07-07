@@ -1,7 +1,7 @@
 
 <nav>
-    <a href="/auth/logout">Log out</a>
-    
+    <a href="/auth/logout">Log out</a> <br>
+    <a href="/private/creator/profile">Go to Profile</a>
 </nav>
 <h1>Welcome, Creator!!</h1>
 
@@ -9,14 +9,11 @@
     
     {{#each gamesList}}
         {{name}} <br>
-        {{thumbnailUrl}} <br>
-        {{creator}}<br>
-        <hr>
-        {{!-- aqui estaba creator y nos pintaba su id en pantalla --}}
+        <img src="{{thumbnailUrl}}" alt="Game Image"></img> <br>
+        {{creator.username}}<br>
+        <a href="{{_id}}" class ="play-button" role="button">PLAY</a>
+        <hr>        
     {{/each}}
     
-</div>
-<div>
-    <a href="/private/game/add">Add Game</a>
 </div>
 

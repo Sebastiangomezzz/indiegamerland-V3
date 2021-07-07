@@ -1,0 +1,33 @@
+
+<nav>
+    <a href="/auth/logout">Log out</a>
+    <div><br>
+    <a href="/private/game/add">Add Game</a>
+    </div><br>
+    <div>
+        <hr>
+
+
+{{!-- 
+    // holi no me dejan entrar :'(
+    'vamosssss
+    function(lopetaisfuertemente){
+        if (Victor){
+            return lo petamos mejor
+        }
+    } --}}
+</nav>
+<h1>Welcome, Creator!!</h1>
+
+<div>
+    
+    {{#each creatorGamesList}}
+        {{name}} <br>
+        <img src="{{thumbnailUrl}}" alt="Game Image"></img> <br>
+        {{creator.username}}<br>
+        <a href="/private/{{_id}}/edit">Edit This Game</a>
+        <a href="/private/{{_id}}/delete">Delete This Game</a>
+        <hr>
+    {{/each}}
+    
+</div>
