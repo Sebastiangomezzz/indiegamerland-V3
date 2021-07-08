@@ -1,15 +1,12 @@
- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="https://image.flaticon.com/icons/png/512/742/742263.png" width="112" height="28">
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+<nav  class="nav" role="navigation" aria-label="main navigation">
+    <div>
+        <img src="https://image.flaticon.com/icons/png/512/742/742263.png" width="112" height="28">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        </a>
+    </div>
 
 
     <div class="navbar-end">
@@ -20,22 +17,21 @@
         </div>
       </div>
     </div>
-  </div>
 </nav>
    
-  <div class="container">
-      <h1 class='title is 1' > Welcome to INDIEGAMERLAND </h1>
-      <p class="subtitle">
+<div class="container">
+    <h1 class='title is 1' > Welcome to INDIEGAMERLAND </h1>
+    <p class="subtitle">
         "Where the gamers and the game creators share their experiences"
-      </p>
-    </div>
+    </p>
+</div>
 
 <div>    
     {{#each gamesList}}
         {{name}} <br>
         <img src="{{thumbnailUrl}}" alt="Game Image"></img> <br>
         {{creator.username}}<br>
-        <a href="{{_id}}" class ="play-button" role="button">PLAY</a>
+        <a href="{{_id}}" class ="play-button" role="button">PLAY</a><br>
                 
     {{/each}} 
 </div>

@@ -1,14 +1,28 @@
 
-body {
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+body{
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Press Start 2P"; 
+  font-size: 15px;
+  background-image: url('https://ak.picdn.net/shutterstock/videos/1012419884/thumb/1.jpg');
+  background-repeat: no-repeat;  
+  background-attachment: fixed; 
+  background-size: cover;
+    
 }
 
-a {
+a{
   color: #00b7ff;
 }
 
-h1 {
-  color: 15px;
+h1{
+  color: white;
+  font-size: 20px; 
 }
 
+
+nav{
+  background-color: brown;
+}

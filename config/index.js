@@ -43,7 +43,11 @@ module.exports = (app) => {
   // Sets the view engine to handlebars
   app.set("view engine", "hbs");
   // AHandles access to the public folder
+  //app.use(express.static('public'))
   app.use(express.static(path.join(__dirname, "..", "public")));
+  //app.use('/static', express.static(__dirname + '/public'));
+  //app.use(express.static('/public'))
+ 
 
   // Handles access to the favicon
   app.use(

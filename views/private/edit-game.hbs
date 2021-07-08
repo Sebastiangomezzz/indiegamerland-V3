@@ -1,29 +1,56 @@
-
 <h2>Edit Game</h2>
 
-<form action='/private/{{game._id}}/edit' method='POST' enctype="multipart/form-data">
-  <label>Game name:</label>
-  <input type="text" name="name" value="{{game.name}}" />
-  <br>
+ <div class="section is-centered">
+  <form action='/private/{{game._id}}/edit'
+    method='POST' 
+    class='column is-4 is-centered has-text-centered'
+    enctype="multipart/form-data">
+  
+    <div class="field">
+        <label class="label">Game name:</label>
+      <div class="control">
+        <input class="input" type="text" name="name" value="{{game.name}}">
+      </div>
+    </div>
 
-  <label>Game Image</label>
-  <input type="file" name="thumbnailUrl" value="{{game.thumbnailUrl}}"/>
-  <br>
-  <label>Game Description</label>
-  <textarea type="text" name="description" value="{{game.description}}" /> 
-  </textarea>
-  <br>
-  <label for="genre-select">Select genre: 
-        <select name="genre" id="genre-select">
+    <div class="field">
+        <label class="label">Game Thumbnail</label>
+      <div class="control">
+        <input type="file" name="thumbnailUrl" value="{{game.thumbnailUrl}}"/>
+      </div>
+    </div>
+    
+
+    <div class="field">
+      <label class="label" for="genre-select">Select genre:</label>
+      <div class="control">
+        <div class="select">
+          <select name="genre" id="genre-select">
             <option value="">--Please choose an option--</option>
             <option value="Arcade">Arcade</option>
             <option value="RPG">RPG</option>
             <option value="Platform">Platform</option>
             <option value="Strategy">Strategy</option>
             <option value="Other">Other</option>
-        </select>
-    </label><br>
+          </select>
+        </div>
+      </div>
+    </div>
 
-  <button type="submit">Update Game</button>
-</form>
+    <div class="field">
+      <label class="label">Game Description</label>
+        <div class="control">
+          <textarea class="textarea" type="text" name="description" value="{{game.description}}"/></textarea>
+        </div>
+    </div>
+          
+    <div class="field is-grouped">
+      <div class="control">
+        <button type="submit" class="button is-link">Update Game</button>
+      </div>
+    </div>
+  
+  </form>
+ </div>
 
+  

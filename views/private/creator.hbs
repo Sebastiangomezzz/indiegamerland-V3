@@ -1,17 +1,14 @@
-
+<nav>
  <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
-        <a class="button is-link" href="/private/creator/profile">Go to My creator panel</a>
-        <a class="button has shadow" href="/auth/logout">Log out</a>
-        </div>
+        <a  href="/private/creator/profile">Go to My creator panel</a>
+        <a href="/auth/logout">Log out</a>
       </div>
     </div>
-  </div>
 </nav>
 
 
-<h1 class=title is 1> Welcome, {{currentCreator.username}}!!</h1>
+<h1> Welcome, {{currentCreator.username}}!!</h1>
     <img src="{{currentCreator.profileImage}}" alt=""></img>
 <div>
 
@@ -19,8 +16,8 @@
         {{name}} <br>
         <img src="{{thumbnailUrl}}" alt="Game Image"></img> <br>
         {{creator.username}}<br>
+        {{description}}
         <a href="{{_id}}" class ="play-button" role="button">PLAY</a>       
     {{/each}}
     
 </div>
-
