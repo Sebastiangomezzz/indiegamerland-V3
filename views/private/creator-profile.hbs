@@ -1,11 +1,16 @@
+ <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        <a class="button is-link" href="/private/game/add">Add Game</a>
+        <a class="button is-link" href="/private/creator">Back to games</a>
+        <a class="button has shadow" href="/auth/logout">Log out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
 
-<nav>
-    <a href="/auth/logout">Log out</a>
-    <div><br>
-    <a href="/private/game/add">Add Game</a>
-    </div><br>
-    <div>
-        <hr>
+ <h1 class='title is-1'> Welcome to your panel, {{currentCreator}}! </h1>
 
 
 {{!-- 
@@ -16,8 +21,6 @@
             return lo petamos mejor
         }
     } --}}
-</nav>
-<h1>Welcome, Creator!!</h1>
 
 <div>
     
@@ -27,7 +30,7 @@
         {{creator.username}}<br>
         <a href="/private/{{_id}}/edit">Edit This Game</a>
         <a href="/private/{{_id}}/delete">Delete This Game</a>
-        <hr>
+        
     {{/each}}
     
 </div>

@@ -1,3 +1,4 @@
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -11,17 +12,3 @@ h1 {
   color: 15px;
 }
 
-
-.embed-game {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-.embed-game iframe {
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}

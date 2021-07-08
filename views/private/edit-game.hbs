@@ -2,7 +2,6 @@
 <h2>Edit Game</h2>
 
 <form action='/private/{{game._id}}/edit' method='POST' enctype="multipart/form-data">
-
   <label>Game name:</label>
   <input type="text" name="name" value="{{game.name}}" />
   <br>
@@ -24,7 +23,6 @@
             <option value="Other">Other</option>
         </select>
     </label><br>
-
 
   <button type="submit">Update Game</button>
 </form>

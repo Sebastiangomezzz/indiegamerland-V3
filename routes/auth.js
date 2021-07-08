@@ -20,7 +20,7 @@ router.get("/signup", isLoggedOut, (req, res) => {//isLoggedOut,
   res.render("auth/signup");
 });
 
-router.post("/signup", isLoggedOut, (req, res) => {//isLoggedOut,
+router.post("/signup", isLoggedOut, fileUploader.single("profileImage"), (req, res) => {//isLoggedOut,
   const { username, password, email, creator } = req.body;////////domingo 4/////////////////
   console.log(req.body)
   if (!username) {
@@ -59,7 +59,8 @@ router.post("/signup", isLoggedOut, (req, res) => {//isLoggedOut,
           username,
           password: hashedPassword,
           email,
-          creator         //////////////////domingo 4/////////////////
+          creator,
+          profileImage:req.file.path        //////////////////domingo 4/////////////////
         });    
       })
       .then((user) => {

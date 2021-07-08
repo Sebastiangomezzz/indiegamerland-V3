@@ -1,9 +1,16 @@
-<nav>
-    <a href="/auth/logout">Log out</a>
-</nav>
-<h1>Welcome, User!!</h1>
+
+ <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        <a class="button has shadow" href="/auth/logout">Log out</a>
+      </div>
+    </div>
+  </div>
+
+<h1 class='title is-1'>Welcome, {{currentUser}}!!</h1>
 
 <div>
+   <img src="{{currentUser.profileImage}}" alt=""></img>
     
     {{#each gamesList}}
         {{name}} <br>

@@ -8,7 +8,8 @@ const userSchema = new Schema(
   email: {type: String, match: [ /^\S+@\S+\.\S+$/ , "Please input a valid email"], lowercase: true},
   creator: String,
   playedGames: [{ type: Schema.Types.ObjectId, ref: "Game", default: []}],
-  createdGames: [{ type: Schema.Types.ObjectId, ref: "Game", default: []}]
+  createdGames: [{ type: Schema.Types.ObjectId, ref: "Game", default: []}],
+  profileImage: {type: String, default: "/public/images/apple.png"}
   }
 );
 

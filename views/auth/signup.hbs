@@ -1,5 +1,5 @@
 <div class="forms">
-   <form action="/auth/signup" method="POST">
+   <form action="/auth/signup" method="POST" enctype="multipart/form-data">
       <label> Username
          <input type="text" name="username">
       </label>
@@ -18,6 +18,9 @@
             <option value ="No">No</option>
          </select>
       </label>
+      <label> Profile Image </label>
+         <input type ="file" name="profileImage">
+         <br>
       {{!-- <label>Creator
          <input type="checkbox" name="creator">
       </label> --}}

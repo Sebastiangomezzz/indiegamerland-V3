@@ -7,7 +7,7 @@ const games = [
     name: "Flatearthling Nightmare", url: "https://sebastiangomezzz.github.io/flat-eathling-nightmare/",
     thumbnailUrl: "/public/images/Screenshot from 2021-07-05 11-52-15.png",
     description: "Coolest game ever",
-    creator: "60e2b728ad2a3514e6c7566a",
+    creator: "60e6accc6bc4c5329fdca87b",
     reviews: [],
     genre: "Arcade"
     },
@@ -15,7 +15,7 @@ const games = [
     name: "Skater Girl Takes Japan", url: "https://laurindor.github.io/Skater-girl-takes-Japan/",
     thumbnailUrl: "/public/images/skatergirl.PNG",
     description: "Not the coolest game ever but almost",
-    creator: "60e2b728ad2a3514e6c7566a",
+    creator: "60e6accc6bc4c5329fdca87b",
     reviews: [],
     genre: "Arcade"        
     },
@@ -23,7 +23,7 @@ const games = [
     name: "Aguafiestas", url: "https://viciot.github.io/Aguafiestas_v1/",
     thumbnailUrl: "/public/images/fondo1.png",
     description: "Something between Battlefield and Age of Empires 2",
-    creator: "60e2b728ad2a3514e6c7566a",
+    creator: "60e6accc6bc4c5329fdca87b",
     reviews: [],
     genre: "Strategy"     
     }

@@ -5,8 +5,36 @@
 <h1>Let's Play!!!!!!</h1>
 
 
-<h1>{{foundGame.name}}</h1>
+<h1>{{name}}</h1>
 
-<div class="embed-game">
-<iframe src={{foundGame.url}} frameborder= "0" allowfullscreen></iframe>
+<figure class="image is-16by9">
+<iframe class="has-ratio" width="640" height="360" src={{url}} frameborder= "0" allowfullscreen></iframe>
+</figure>
+
+<br />
+<h2>Want to leave a comment?</h2>
+<form action='/private/{{_id}}/review' method='POST'>
+
+  <textarea type='text' name='comment'></textarea>
+
+  <button type="submit">Send comment</button>
+
+</form>
+
+
+{{!-- {{#if foundGame.reviews}} --}}
+<h3>List of reviews:</h3>
+
+<div class="review">
+  {{#if reviews.reviews}}  
+  {{#each reviews}}
+  
+    <h4>Author: {{user.username}}</h4>
+  
+    <p>Comment: </p>
+    <p>{{comment}}</p>
+  
+  {{/each}}
+  {{/if}}
 </div>
+
