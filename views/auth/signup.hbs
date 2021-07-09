@@ -1,5 +1,16 @@
-<div class="forms">
-   <form action="/auth/signup" method="POST" enctype="multipart/form-data">
+<nav  class="nav" role="navigation" aria-label="main navigation">
+   <div>
+      <img src="https://img.icons8.com/material-rounded/48/000000/apple-arcade.png" width="112" height="100">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      </a>
+   </div>
+</nav>
+
+<div class="form-container">
+   <form class="form" action="/auth/signup" method="POST" enctype="multipart/form-data">
       <label> Username
          <input type="text" name="username">
       </label>
@@ -25,9 +36,46 @@
          <input type="checkbox" name="creator">
       </label> --}}
 
-      <button type="submit">Submit</button>
+      <button style="background:rgb(139, 23, 216);cursor:pointer" type="submit">Submit</button>
    </form>
 </div>
+
+<style>
+   .nav{
+      background-color: rgba(194, 63, 176, 0.568);
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100px;
+   }
+   .form-container{
+      margin-top: 200px;
+      display: flex;
+	   flex-direction: row-reverse;
+	   flex-wrap: nowrap;
+	   justify-content: center;
+	   align-items: center;
+	   align-content: center;  
+
+   }
+   .form{
+      display: flex;
+	   flex-direction: column;
+	   flex-wrap: nowrap;
+	   justify-content: center;
+	   align-items: center;
+	   align-content: center;
+      background-color: rgba(202, 66, 184, 0.356);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;      
+   }
+</style>
+
+
+
+
 
 
 

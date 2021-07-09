@@ -1,10 +1,83 @@
-<form action="/auth/login" method="POST">
-   <label> Username
-      <input type="text" name="username">
-   </label>
-   <label> Password
-      <input type="password" name="password">
-   </label>
+
+<nav  class="nav" role="navigation">
+   <div>
+      <img src="https://img.icons8.com/material-rounded/48/000000/apple-arcade.png" width="112" height="100"/>   
+   </div>
+</nav>
+
+<style>
+   .nav{
+      background-color: rgba(194, 63, 176, 0.568);
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100px;
+   }
+
+</style>
+
+<div class= "formu">
+<form class="form-inline" action="/auth/login" method="POST">
+   <div class="form-fields">
+      <label> Username</label>
+         <input type="text" name="username"  placeholder="Enter username">
+      
+      <label> Password</label>
+         <input type="password" name="password" placeholder= "******">
+   </div>
+   
    <button type="submit">Submit</button>
 </form>
+</div>
 
+
+<style>
+
+.formu{
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: center
+
+}
+label{   
+   font-family: 'Courier New',    Courier, monospace;
+   font-size: 20px;
+   color: rgb(228, 207, 20);
+}
+
+/* Add some margins for each label */
+.form-inline label {
+  margin: 300px 0 100px 0;
+  color: rgb(228, 207, 20);
+  flex-direction: center;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Style the input fields */
+.form-inline input {
+  margin: 350px 0 100px 0;
+  padding: 10px;
+  color: rgb(228, 207, 20);
+  background-color: rgba(202, 66, 184, 0.356);
+  border: 1px solid #ddd;
+
+}
+
+button {
+  background-color: #8b0f7b;
+  font-size: 16px;
+  color:rgb(228, 207, 20);
+  cursor: pointer; 
+  width: 50%;
+  padding: 25px 32px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+
+</style>

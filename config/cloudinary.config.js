@@ -12,7 +12,7 @@ const storage = new CloudinaryStorage({
     
     cloudinary,
     params: {
-      allowed_formats: ['jpg', 'png', 'PNG'],
+      allowed_formats: ['jpg', 'png', 'PNG',"ico"],
       folder: 'indiegamerland-V3' 
     }
 });

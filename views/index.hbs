@@ -1,43 +1,125 @@
 <nav  class="nav" role="navigation" aria-label="main navigation">
     <div>
-        <img src="https://image.flaticon.com/icons/png/512/742/742263.png" width="112" height="28">
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+        <img src="https://img.icons8.com/material-rounded/48/000000/apple-arcade.png" width="112" height="100">
         </a>
     </div>
-
-
-    <div class="navbar-end">
-      <div class="navbar-item">
         <div class="buttons">
-         <a class="button is-link" href="/auth/signup">Sign up</a>
-         <a class="button is-light" href="/auth/login">Log in</a>
+            <a href="/auth/signup">Sign up</a>
+            <a href="/auth/login">Log in</a>
         </div>
       </div>
     </div>
 </nav>
-   
+
+<style>
+    h1{
+      font-size: 40px;
+    }
+   .nav{
+      background-color: rgba(194, 63, 176, 0.568);
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100px;
+   }
+
+    .buttons{
+        margin-top: -80px;
+        display: flex;
+	    flex-direction: column;
+	    flex-wrap: nowrap;
+	    justify-content: flex-start;
+	    align-items: flex-end;
+	    align-content: flex-start;
+    }
+    .buttons a{
+        font-family: 'Courier New',    Courier, monospace;
+        font-size: 16px;
+        color: rgba(194, 63, 176, 0.568);
+        background-color: rgb(228, 207, 20);
+        padding: 4px;
+        margin: 3px;
+        border-radius: 3px;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    .subtitle{
+        font-size: 20px;
+    }
+
+</style>
+
 <div class="container">
-    <h1 class='title is 1' > Welcome to INDIEGAMERLAND </h1>
-    <p class="subtitle">
-        "Where the gamers and the game creators share their experiences"
-    </p>
+    <div class="title">
+        <h1> Welcome to INDIEGAMERLAND </h1>
+        <p class="subtitle">
+            "Where the gamers and the game creators share their experiences"
+        </p>
+    </div>
 </div>
 
-<div>    
+<div class="game">    
     {{#each gamesList}}
-        {{name}} <br>
-        <img src="{{thumbnailUrl}}" alt="Game Image"></img> <br>
-        {{creator.username}}<br>
-        <a href="{{_id}}" class ="play-button" role="button">PLAY</a><br>
+        <div class="game-block">
+            {{name}} <br>
+            <img class="thumbnail" src="{{thumbnailUrl}}" alt="Game Image"></img> <br>
+            {{creator.username}}<br>
+            <a class="play" href="{{_id}}" class ="play-button" role="button">PLAY</a><br>
+        </div>
                 
     {{/each}} 
 </div>
-
-
-<div>
-    {{!-- <iframe src="(aqui ira la url del juego con el id de al lado)" frameborder="0">Game One(aqui tiene que ir un id de un juego y su nombre)</iframe>
-    <iframe src="(aqui ira la url del juego con el id de al lado)" frameborder="0">Game two(aqui tiene que ir un id de un juego y su nombre)</iframe> --}}
-</div>
+<style>
+    .title{
+        margin-top: 60px;
+        margin-bottom: 30px;
+        display: flex;
+	    flex-direction: column;
+	    flex-wrap: nowrap;
+	    justify-content: flex-start;
+	    align-items: center;
+	    align-content: center;
+    }
+    .thumbnail{
+        width: 300px;
+        height: 300px;
+        border-radius: 15px;
+    }
+    .game{
+        display: flex;
+	    flex-direction: row;
+	    flex-wrap: nowrap;
+	    justify-content: center;
+	    align-items: center;
+	    align-content: center;
+        
+    }
+    .game-block{
+        display: flex;
+	    flex-direction: column;
+	    flex-wrap: nowrap;
+	    justify-content: center;
+	    align-items: center;
+	    align-content: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        color: white;
+        margin: 0 15px 0 15px;
+        padding: 15px;
+        border: solid 3px black;
+        background-color: rgba(236, 241, 210, 0.568);
+        border-radius: 15px;
+        
+    }
+    .play{
+        font-size: large;
+        color: rgb(228, 207, 20);
+        background: black;
+        padding: 5px;
+        padding: 3px;
+        border-radius:3px;
+    }
+    
+    
+</style>

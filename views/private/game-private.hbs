@@ -1,25 +1,100 @@
+ <div class="nav">
+      <div class="navbar-item">
+         <img src="https://img.icons8.com/material-rounded/48/000000/apple-arcade.png" width="112" height="100"/>
+         <div class= "nav-buttons">
+           <a href="/private/creator">Back to the game list</a>
+         </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+   .nav{
+      background-color: rgba(194, 63, 176, 0.568);
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100px;
+   }
+
+    .nav-buttons{  
+      margin-top: -80px;
+      display: flex;
+	    flex-direction: column;
+	    flex-wrap: nowrap;
+	    justify-content: flex-start;
+	    align-items: flex-end;
+	    align-content: flex-start;
+    }
+    .nav-buttons a{
+        font-family: 'Courier New',    Courier, monospace;
+        font-size: 16px;
+        color: rgba(194, 63, 176, 0.568);
+        background-color: rgb(228, 207, 20);
+        padding: 4px;
+        margin: 3px;
+        border-radius: 3px;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    h1{
+        font-size: 40px;
+        margin-right: 20px;
+    }
+    .titles{
+        display: flex;
+	    flex-direction: row;
+	    flex-wrap: nowrap;
+	    justify-content: center;
+	    align-items: center;
+	    align-content: center;
+        margin: 50px 15px 0 15px;
+    }
+</style>
+
+<div class="titles">
+  <h1>Let's Play</h1>
+  
+  
+  <h1> {{name}}!!!!!!</h1>
+</div>
 
 
-<a href="/private/creator">Back to the game list</a>
-
-<h1>Let's Play!!!!!!</h1>
-
-
-<h1>{{name}}</h1>
-
-<figure class="image is-16by9">
-<iframe class="has-ratio" width="640" height="360" src={{url}} frameborder= "0" allowfullscreen></iframe>
-</figure>
-
+<iframe class="iframe" src={{url}} frameborder= "0" allowfullscreen></iframe>
+<style>
+.iframe{
+  height: 800px;
+  width: 100%
+}
+</style>
 
 <h2>Want to leave a comment?</h2>
 <form action='/private/{{_id}}/review' method='POST'>
 
   <textarea type='text' name='comment'></textarea>
 
-  <button type="submit">Send comment</button>
+  <button class= 'button' type="submit">Send comment</button>
 
 </form>
+
+
+<style>
+
+  button {
+  background-color: #8b0f7b;
+  font-size: 16px;
+  color:rgb(228, 207, 20);
+  cursor: pointer; 
+  width: 10%;
+  padding: 20px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+</style>
 
 
 {{!-- {{#if foundGame.reviews}} --}}

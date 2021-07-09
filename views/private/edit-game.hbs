@@ -1,56 +1,104 @@
-<h2>Edit Game</h2>
-
- <div class="section is-centered">
-  <form action='/private/{{game._id}}/edit'
-    method='POST' 
-    class='column is-4 is-centered has-text-centered'
-    enctype="multipart/form-data">
-  
-    <div class="field">
-        <label class="label">Game name:</label>
-      <div class="control">
-        <input class="input" type="text" name="name" value="{{game.name}}">
+ <div class="nav">
+      <div class="navbar-item">
+         <img src="https://img.icons8.com/material-rounded/48/000000/apple-arcade.png" width="112" height="100"/>
+        </div>
       </div>
     </div>
+  </div>
+</nav>
 
-    <div class="field">
-        <label class="label">Game Thumbnail</label>
-      <div class="control">
-        <input type="file" name="thumbnailUrl" value="{{game.thumbnailUrl}}"/>
-      </div>
-    </div>
+
+<style>
+    h1{
+      font-size: 40px;
+    }
+    .nav{
+      background-color: rgba(194, 63, 176, 0.568);
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100px;
+    }
+    .form{
+      display: flex;
+      flex-direction: column;
+	    flex-wrap: wrap;
+	    justify-content: center;
+	    align-items: center;
+	    align-content: center;
+      margin-top: 125px;
+    }
+    .form-inner{
+      
+      margin: 350px 0 100px 0;
+      padding: 10px;
+      color: rgb(228, 207, 20);
+      background-color: rgba(202, 66, 184, 0.356);
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .field{
+      
+      margin-top: 15px;
+    }
+
+</style>
+
+
+<div class="form">
+<h1>Edit Game</h1>
+
+  <div class="form-inner">
+    <form action='/private/{{game._id}}/edit'
+      method='POST'
+      class='column is-4 is-centered has-text-centered'
+      enctype="multipart/form-data">
     
-
-    <div class="field">
-      <label class="label" for="genre-select">Select genre:</label>
-      <div class="control">
-        <div class="select">
-          <select name="genre" id="genre-select">
-            <option value="">--Please choose an option--</option>
-            <option value="Arcade">Arcade</option>
-            <option value="RPG">RPG</option>
-            <option value="Platform">Platform</option>
-            <option value="Strategy">Strategy</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Game Description</label>
+      <div class="field">
+          <label class="label">Game name:</label>
         <div class="control">
-          <textarea class="textarea" type="text" name="description" value="{{game.description}}"/></textarea>
+          <input class="input" type="text" name="name" value="{{game.name}}">
         </div>
-    </div>
-          
-    <div class="field is-grouped">
-      <div class="control">
-        <button type="submit" class="button is-link">Update Game</button>
       </div>
-    </div>
-  
-  </form>
+      <div class="field">
+          <label class="label">Game Thumbnail</label>
+        <div class="control">
+          <input type="file" name="thumbnailUrl" value="{{game.thumbnailUrl}}"/>
+        </div>
+      </div>
+    
+      <div class="field">
+        <label class="label" for="genre-select">Select genre:</label>
+        <div class="control">
+          <div class="select">
+            <select name="genre" id="genre-select">
+              <option value="">--Please choose an option--</option>
+              <option value="Arcade">Arcade</option>
+              <option value="RPG">RPG</option>
+              <option value="Platform">Platform</option>
+              <option value="Strategy">Strategy</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Game Description</label>
+          <div class="control">
+            <textarea class="textarea" type="text" name="description" value="{{game.description}}"/></textarea>
+          </div>
+      </div>
+    
+      <div class="field is-grouped">
+        <div class="control">
+          <button type="submit" class="button is-link">Update Game</button>
+        </div>
+      </div>
+    
+    </form>
+  </div>
  </div>
 
   

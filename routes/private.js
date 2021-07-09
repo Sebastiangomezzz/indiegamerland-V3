@@ -63,7 +63,8 @@ router.get("/creator/profile", protectCreator, isLoggedIn, (req, res)=>{
 		// const newList = creatorGamesList.filter((eachGame)=>eachGame.creator.id===creatorId)
 		// console.log(newList)//gitan way+
 		
-		res.render('private/creator-profile', {creatorGamesList})
+		res.render('private/creator-profile', {creatorGamesList,
+		currentCreator: req.session.user}) // !esto no envia bien la info al form
 	})
 	.catch(err=> console.log(err))
 })

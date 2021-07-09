@@ -1,36 +1,121 @@
- <div class="navbar-end">
+ <div class="nav">
       <div class="navbar-item">
-        <div class="buttons">
-        <a class="button is-link" href="/private/game/add">Add Game</a>
-        <a class="button is-link" href="/private/creator">Back to games</a>
-        <a class="button has shadow" href="/auth/logout">Log out</a>
-        </div>
+         <img src="https://img.icons8.com/material-rounded/48/000000/apple-arcade.png" width="112" height="100"/>
+         <div class="nav-buttons">
+           <a href="/private/game/add">Add Game</a>
+           <a href="/private/creator">Back to games</a>
+           <a href="/auth/logout">Log out</a>
+          </div>
       </div>
     </div>
   </div>
 </nav>
 
- <h1> Welcome to your panel, {{currentCreator}}! </h1>
+<style>
+   .nav{
+      background-color: rgba(194, 63, 176, 0.568);
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100px;
+   }
+
+    .nav-buttons{
+        margin-top: -102px;
+        display: flex;
+	    flex-direction: column;
+	    flex-wrap: nowrap;
+	    justify-content: flex-start;
+	    align-items: flex-end;
+	    align-content: flex-start;
+    }
+    .nav-buttons a{
+        font-family: 'Courier New',    Courier, monospace;
+        font-size: 16px;
+        color: rgba(194, 63, 176, 0.568);
+        background-color: rgb(228, 207, 20);
+        padding: 4px;
+        margin: 3px;
+        border-radius: 3px;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    .title-logo{
+        margin-top: 60px;
+        display: flex;
+	    flex-direction: row;
+	    flex-wrap: nowrap;
+	    justify-content: center;
+	    align-items: center;
+	    align-content: center;
+    }
+    h1{
+        font-family: 'Courier New',    Courier, monospace;
+        font-size: 40px; 
+        margin-top: 50px;
+        color: rgb(228, 207, 20);
+        margin-bottom: 40px;
+    }
+</style>
+
+<div class="title-logo">
+     <h1> Welcome to your panel{{currentCreator.username}}! </h1>
+</div>
 
 
-{{!-- 
-    // holi no me dejan entrar :'(
-    'vamosssss
-    function(lopetaisfuertemente){
-        if (Victor){
-            return lo petamos mejor
-        }
-    } --}}
-
-<div>
+<div class="game">
     
     {{#each creatorGamesList}}
-        {{name}} <br>
-        <img src="{{thumbnailUrl}}" alt="Game Image"></img> <br>
-        {{creator.username}}<br>
-        <a href="/private/{{_id}}/edit">Edit This Game</a>
-        <a href="/private/{{_id}}/delete">Delete This Game</a>
-        
-    {{/each}}
+           <div class="game-block">
     
+                
+                {{name}} 
+                <img class="thumbnail" src="{{thumbnailUrl}}" alt="Game Image"></img> 
+                <p>Creator: {{creator.username}}</p>
+                <a class="play" href="/private/{{_id}}/edit">Edit This Game</a>
+                <a class="play" href="/private/{{_id}}/delete">Delete This Game</a>
+            </div>
+    {{/each}}
+
+    <style>
+                .thumbnail{
+                    width: 300px;
+                    border-radius: 15px;
+                }
+                .game{
+                    display: flex;
+                    display: flex;
+	                flex-direction: column;
+	                flex-wrap: nowrap;
+	                justify-content: center;
+	                align-items: center;
+	                align-content: center;
+                }
+                .game-block{
+                    
+                    display: flex;
+	                flex-direction: column;
+	                flex-wrap: nowrap;
+	                justify-content: center;
+	                align-items: center;
+	                align-content: center;
+                    font-family: 'Courier New', Courier, monospace;
+                    font-weight: bold;
+                    color: white;
+                    margin: 0 15px 0 15px;
+                    padding: 15px;
+                    border: solid 3px black;
+                    background-color: rgba(236, 241, 210, 0.568);                    
+                    border-radius: 15px;
+                }
+                .play{
+                    font-size: large;
+                    color: rgb(228, 207, 20);
+                    background: black;
+                    padding: 3px;
+                    border-radius:3px;
+
+                }
+    </style>
 </div>
